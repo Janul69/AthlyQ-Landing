@@ -11,7 +11,7 @@ export default function Footer() {
               <div className="w-8 h-8 bg-gradient-to-br from-accent to-accent/60 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">AC</span>
               </div>
-              <span className="font-bold text-lg text-foreground">AthleteCoach</span>
+              <span className="font-bold text-lg text-foreground">AthlyQ</span>
             </div>
             <p className="text-sm text-foreground/60">
               Connecting athletes with elite coaches for personalized training and performance improvement.

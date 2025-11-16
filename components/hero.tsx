@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import React from "react";
 
 export default function Hero() {
   return (
@@ -71,35 +72,15 @@ export default function Hero() {
           </div>
 
           {/* Right Visual */}
-          <div className="relative h-96 md:h-full min-h-[500px] rounded-2xl overflow-hidden">
-            <img
-              src="/athlete-and-coach-training-together-in-gym.jpg"
-              alt="Athlete and coach training"
-              className="w-full h-full object-cover rounded-2xl"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent rounded-2xl" />
-
-            {/* Floating Card */}
-            <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-xl p-4 shadow-xl">
-              <p className="text-sm font-semibold text-foreground mb-2">
-                Performance Metrics
-              </p>
-              <div className="flex gap-4">
-                <div>
-                  <p className="text-2xl font-bold text-accent">+24%</p>
-                  <p className="text-xs text-foreground/60">
-                    Speed Improvement
-                  </p>
-                </div>
-                <div className="w-px bg-border" />
-                <div>
-                  <p className="text-2xl font-bold text-accent">8 Weeks</p>
-                  <p className="text-xs text-foreground/60">
-                    Average Time to Goal
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="relative h-96 md:h-full min-h-[500px] rounded-2xl overflow-hidden flex items-center justify-center">
+            {React.createElement("lottie-player", {
+              src: "/animation/man-doing-inclined-press.json",
+              background: "transparent",
+              speed: "1",
+              style: { width: "100%", height: "100%" },
+              loop: true,
+              autoplay: true,
+            })}
           </div>
         </div>
       </div>
