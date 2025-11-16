@@ -1,11 +1,16 @@
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
     <section className="relative py-20 md:py-32 overflow-hidden">
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-background to-primary/5 pointer-events-none" />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `linear-gradient(to bottom, #323232ff, transparent)`,
+        }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -17,13 +22,22 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight text-balance">
-              Empowering Athletes. <span className="text-accent">Connecting Coaches.</span>
+            <h1
+              className="text-5xl md:text-6xl font-bold text-foreground leading-tight text-balance"
+              style={{ color: "#ffffffff" }}
+            >
+              Empowering Athletes.{" "}
+              <span className="text-black">
+                Connecting Coaches.
+              </span>
             </h1>
 
-            <p className="text-xl text-foreground/70 leading-relaxed max-w-md text-pretty">
-              Connect with elite coaches for personalized training, mentorship, and performance improvement. Achieve
-              your athletic goals faster.
+            <p
+              className="text-xl text-foreground/70 leading-relaxed max-w-md text-pretty"
+              style={{ color: "#ffffffff" }}
+            >
+              Connect with elite coaches for personalized training, mentorship,
+              and performance improvement. Achieve your athletic goals faster.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-4">
@@ -31,7 +45,10 @@ export default function Hero() {
                 Get Started Free
                 <ArrowRight size={18} />
               </Button>
-              <Button variant="outline" className="rounded-full px-8 h-12 text-base font-semibold bg-transparent">
+              <Button
+                variant="outline"
+                className="rounded-full px-8 h-12 text-base font-semibold bg-transparent"
+              >
                 Watch Demo
               </Button>
             </div>
@@ -64,16 +81,22 @@ export default function Hero() {
 
             {/* Floating Card */}
             <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-xl p-4 shadow-xl">
-              <p className="text-sm font-semibold text-foreground mb-2">Performance Metrics</p>
+              <p className="text-sm font-semibold text-foreground mb-2">
+                Performance Metrics
+              </p>
               <div className="flex gap-4">
                 <div>
                   <p className="text-2xl font-bold text-accent">+24%</p>
-                  <p className="text-xs text-foreground/60">Speed Improvement</p>
+                  <p className="text-xs text-foreground/60">
+                    Speed Improvement
+                  </p>
                 </div>
                 <div className="w-px bg-border" />
                 <div>
                   <p className="text-2xl font-bold text-accent">8 Weeks</p>
-                  <p className="text-xs text-foreground/60">Average Time to Goal</p>
+                  <p className="text-xs text-foreground/60">
+                    Average Time to Goal
+                  </p>
                 </div>
               </div>
             </div>
@@ -81,5 +104,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

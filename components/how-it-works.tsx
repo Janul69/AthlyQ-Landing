@@ -48,16 +48,16 @@ export default function HowItWorks() {
                   <div className="hidden md:block absolute top-20 -right-4 w-8 h-0.5 bg-gradient-to-r from-accent to-accent/30" />
                 )}
 
-                <div className="bg-background rounded-2xl border border-border p-8 h-full hover:shadow-lg transition-shadow">
+                <div className="bg-black rounded-2xl border border-border p-8 h-full hover:shadow-lg transition-shadow">
                   <div className="mb-6 relative">
                     <div className="w-14 h-14 bg-gradient-to-br from-accent to-accent/60 rounded-xl flex items-center justify-center mb-4">
                       <Icon className="w-7 h-7 text-white" />
                     </div>
-                    <span className="text-5xl font-bold text-muted-foreground/20">{step.number}</span>
+                    <span className="text-5xl text-white font-bold text-muted-foreground/20">{step.number}</span>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-foreground mb-3">{step.title}</h3>
-                  <p className="text-foreground/70 leading-relaxed">{step.description}</p>
+                  <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
+                  <p className="text-white/70 leading-relaxed">{step.description}</p>
                 </div>
               </div>
             )
