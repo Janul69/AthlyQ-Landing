@@ -63,8 +63,8 @@ export default function Navigation() {
               variant="outline" 
               className={`rounded-full transition-all duration-300 ${
                 isScrolled 
-                  ? "bg-transparent border-border text-foreground hover:bg-muted hover:border-foreground/20" 
-                  : "bg-transparent border-white/30 text-white hover:bg-white/10 hover:border-white/50"
+                  ? "bg-transparent border-border text-foreground hover:bg-muted hover:text-black hover:border-foreground/20" 
+                  : "bg-[#323232ff] border-white/30 text-white hover:bg-white/10 hover:border-white/50"
               }`}
             >
               Sign In

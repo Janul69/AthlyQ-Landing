@@ -19,7 +19,7 @@ export default function Hero() {
           <div className="space-y-6">
             <div className="inline-block">
               <span className="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold">
-                ✓ Trusted by 10,000+ Athletes
+                ✓ The choice of athletes everywhere
               </span>
             </div>
 
@@ -48,7 +48,7 @@ export default function Hero() {
               </Button>
               <Button
                 variant="outline"
-                className="rounded-full px-8 h-12 text-base font-semibold bg-transparent"
+                className="rounded-full px-8 h-12 text-base hover:bg-white/90 hover:text-black font-semibold bg-transparent"
               >
                 Watch Demo
               </Button>
