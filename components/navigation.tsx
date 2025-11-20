@@ -17,13 +17,18 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const navBackground = isScrolled
+    ? "rgba(255, 255, 255, 0.95)"
+    : "rgba(255, 255, 255, 0.95)"
+
   return (
     <nav 
       className={`sticky top-0 z-50 backdrop-blur-md border-b transition-all duration-300 shadow-sm ${
         isScrolled 
           ? "bg-white/95 border-border shadow-md" 
-          : "bg-[#323232ff] border-transparent"
+          : "border-transparent"
       }`}
+      style={{ background: navBackground }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -31,8 +36,8 @@ export default function Navigation() {
             <div className="w-8 h-8 bg-gradient-to-br from-accent to-accent/60 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">AC</span>
             </div>
-            <span className={`font-bold text-lg transition-colors ${isScrolled ? "text-foreground" : "text-white"}`}>
-              AthlyQ
+            <span className={`font-bold text-lg transition-colors ${isScrolled ? "text-foreground" : "text-foreground"}`}>
+            AthliyQ
             </span>
           </div>
 
@@ -40,19 +45,19 @@ export default function Navigation() {
           <div className="hidden md:flex items-center gap-8">
             <a 
               href="#how-it-works" 
-              className={`transition-all duration-200 font-medium ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-white/80 hover:text-white"}`}
+              className={`transition-all duration-200 font-medium ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-foreground/80 hover:text-foreground"}`}
             >
               How it Works
             </a>
             <a 
               href="#coaches" 
-              className={`transition-all duration-200 font-medium ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-white/80 hover:text-white"}`}
+              className={`transition-all duration-200 font-medium ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-foreground/80 hover:text-foreground"}`}
             >
               Coaches
             </a>
             <a 
               href="#testimonials" 
-              className={`transition-all duration-200 font-medium ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-white/80 hover:text-white"}`}
+              className={`transition-all duration-200 font-medium ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-foreground/80 hover:text-foreground"}`}
             >
               Testimonials
             </a>
@@ -64,7 +69,7 @@ export default function Navigation() {
               className={`rounded-full transition-all duration-300 ${
                 isScrolled 
                   ? "bg-transparent border-border text-foreground hover:bg-muted hover:text-black hover:border-foreground/20" 
-                  : "bg-[#323232ff] border-white/30 text-white hover:bg-white/10 hover:border-white/50"
+                  : "bg-transparent border-foreground/20 text-foreground hover:bg-white/40 hover:border-foreground/40"
               }`}
             >
               Sign In
@@ -80,13 +85,13 @@ export default function Navigation() {
             className={`md:hidden p-2 rounded-lg transition ${
               isScrolled 
                 ? "hover:bg-muted" 
-                : "hover:bg-white/10"
+                : "hover:bg-white/40"
             }`}
           >
             {isOpen ? (
-              <X size={24} className={isScrolled ? "text-foreground" : "text-white"} />
+              <X size={24} className={isScrolled ? "text-foreground" : "text-foreground"} />
             ) : (
-              <Menu size={24} className={isScrolled ? "text-foreground" : "text-white"} />
+              <Menu size={24} className={isScrolled ? "text-foreground" : "text-foreground"} />
             )}
           </button>
         </div>
@@ -94,12 +99,12 @@ export default function Navigation() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className={`md:hidden pb-4 border-t space-y-3 ${
-            isScrolled ? "border-border" : "border-white/20"
+            isScrolled ? "border-border" : "border-foreground/20"
           }`}>
             <a 
               href="#how-it-works" 
               className={`block py-2.5 px-2 rounded-lg transition-all duration-200 font-medium ${
-                isScrolled ? "text-foreground/70 hover:text-foreground hover:bg-muted/50" : "text-white/80 hover:text-white hover:bg-white/10"
+                isScrolled ? "text-foreground/70 hover:text-foreground hover:bg-muted/50" : "text-foreground/80 hover:text-foreground hover:bg-white/40"
               }`}
             >
               How it Works
@@ -107,7 +112,7 @@ export default function Navigation() {
             <a 
               href="#coaches" 
               className={`block py-2.5 px-2 rounded-lg transition-all duration-200 font-medium ${
-                isScrolled ? "text-foreground/70 hover:text-foreground hover:bg-muted/50" : "text-white/80 hover:text-white hover:bg-white/10"
+                isScrolled ? "text-foreground/70 hover:text-foreground hover:bg-muted/50" : "text-foreground/80 hover:text-foreground hover:bg-white/40"
               }`}
             >
               Coaches
@@ -115,7 +120,7 @@ export default function Navigation() {
             <a 
               href="#testimonials" 
               className={`block py-2.5 px-2 rounded-lg transition-all duration-200 font-medium ${
-                isScrolled ? "text-foreground/70 hover:text-foreground hover:bg-muted/50" : "text-white/80 hover:text-white hover:bg-white/10"
+                isScrolled ? "text-foreground/70 hover:text-foreground hover:bg-muted/50" : "text-foreground/80 hover:text-foreground hover:bg-white/40"
               }`}
             >
               Testimonials
@@ -126,7 +131,7 @@ export default function Navigation() {
                 className={`flex-1 rounded-full text-sm transition-all duration-300 ${
                   isScrolled 
                     ? "bg-transparent border-border text-foreground hover:bg-muted hover:border-foreground/20" 
-                    : "bg-transparent border-white/30 text-white hover:bg-white/10 hover:border-white/50"
+                    : "bg-transparent border-foreground/20 text-foreground hover:bg-white/40 hover:border-foreground/40"
                 }`}
               >
                 Sign In

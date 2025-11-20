@@ -9,7 +9,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: `linear-gradient(to bottom, #323232ff, transparent)`,
+          background: `linear-gradient(to bottom, #ccdbf8, transparent)`,
         }}
       />
 
@@ -25,17 +25,17 @@ export default function Hero() {
 
             <h1
               className="text-5xl md:text-6xl font-bold text-foreground leading-tight text-balance"
-              style={{ color: "#ffffffff" }}
+              style={{ color: "black" }}
             >
               Empowering Athletes.{" "}
-              <span className="text-black">
+              <span className="text-[#0f60fa]">
                 Connecting Coaches.
               </span>
             </h1>
 
             <p
               className="text-xl text-foreground/70 leading-relaxed max-w-md text-pretty"
-              style={{ color: "#ffffffff" }}
+              style={{ color: "black" }}
             >
               Connect with elite coaches for personalized training, mentorship,
               and performance improvement. Achieve your athletic goals faster.
