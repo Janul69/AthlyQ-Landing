@@ -13,7 +13,7 @@ export default function HowItWorks() {
       icon: Calendar,
       title: "Book a Session",
       description:
-        "Schedule one-on-one training sessions that fit your calendar. Start immediately with flexible timing.",
+        "Schedule one-on-one virtual training sessions that fit your calendar. Start immediately with flexible timing.",
       number: "02",
     },
     {
