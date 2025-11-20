@@ -12,18 +12,19 @@ import SmoothScrollWrapper from "@/components/SmoothScrollWrapper"
 export default function Home() {
   return (
     <main className="bg-background">
-      {/* <SmoothScrollWrapper> */}
       <Navigation />
-      <Hero />
-      <HowItWorks />
-      <Features />
-      <FeaturedCoaches />
-      <Testimonials />
-      <Pricing />
-      <CTA />
-      <Footer />
-      {/* </SmoothScrollWrapper> */}
-      
+      <div className="pt-20 md:pt-24">
+        <SmoothScrollWrapper>
+          <Hero />
+          <HowItWorks />
+          <Features />
+          <FeaturedCoaches />
+          <Testimonials />
+          <Pricing />
+          <CTA />
+          <Footer />
+        </SmoothScrollWrapper>
+      </div>
     </main>
   )
 }

@@ -23,7 +23,7 @@ export default function Navigation() {
 
   return (
     <nav 
-      className={`sticky top-0 z-50 backdrop-blur-md border-b transition-all duration-300 shadow-sm ${
+      className={`fixed top-0 left-0 right-0 w-full z-50 backdrop-blur-md border-b transition-all duration-300 shadow-sm ${
         isScrolled 
           ? "bg-white/95 border-border shadow-md" 
           : "border-transparent"
@@ -37,7 +37,7 @@ export default function Navigation() {
               <span className="text-white font-bold text-sm">AC</span>
             </div>
             <a href='#home' className={`font-bold text-lg transition-colors ${isScrolled ? "text-foreground" : "text-foreground"}`}>
-            AthliyQ
+            AthletyQ
             </a>
           </div>
 
