@@ -8,7 +8,7 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "AthleteCoach - Connect with Elite Coaches",
+  title: "AthletyQ",
   description:
     "Empowering athletes with personalized coaching, mentorship, and performance improvement. Connect with certified coaches for training and athletic excellence.",
   generator: "v0.app",
