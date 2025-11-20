@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden">
+    <section id="home" className="relative py-20 md:py-32 overflow-hidden">
       {/* Gradient Background */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -72,7 +72,7 @@ export default function Hero() {
           </div>
 
           {/* Right Visual */}
-          <div className="relative h-96 md:h-full min-h-[500px] rounded-2xl overflow-hidden flex items-center justify-center">
+          <div className="hidden md:flex relative h-96 md:h-full min-h-[500px] rounded-2xl overflow-hidden items-center justify-center">
             {React.createElement("lottie-player", {
               src: "/animation/man-doing-inclined-press.json",
               background: "transparent",

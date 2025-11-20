@@ -36,9 +36,9 @@ export default function Navigation() {
             <div className="w-8 h-8 bg-gradient-to-br from-accent to-accent/60 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">AC</span>
             </div>
-            <span className={`font-bold text-lg transition-colors ${isScrolled ? "text-foreground" : "text-foreground"}`}>
+            <a href='#home' className={`font-bold text-lg transition-colors ${isScrolled ? "text-foreground" : "text-foreground"}`}>
             AthliyQ
-            </span>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -48,6 +48,12 @@ export default function Navigation() {
               className={`transition-all duration-200 font-medium ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-foreground/80 hover:text-foreground"}`}
             >
               How it Works
+            </a>
+            <a 
+              href="#features" 
+              className={`transition-all duration-200 font-medium ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-foreground/80 hover:text-foreground"}`}
+            >
+              Features
             </a>
             <a 
               href="#coaches" 
@@ -60,6 +66,12 @@ export default function Navigation() {
               className={`transition-all duration-200 font-medium ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-foreground/80 hover:text-foreground"}`}
             >
               Testimonials
+            </a>
+            <a 
+              href="#pricing" 
+              className={`transition-all duration-200 font-medium ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-foreground/80 hover:text-foreground"}`}
+            >
+              Pricing
             </a>
           </div>
 
@@ -108,6 +120,14 @@ export default function Navigation() {
               }`}
             >
               How it Works
+            </a>
+            <a 
+              href="#features" 
+              className={`block py-2.5 px-2 rounded-lg transition-all duration-200 font-medium ${
+                isScrolled ? "text-foreground/70 hover:text-foreground hover:bg-muted/50" : "text-foreground/80 hover:text-foreground hover:bg-white/40"
+              }`}
+            >
+              Features
             </a>
             <a 
               href="#coaches" 
