@@ -1,10 +1,13 @@
 'use client'
 
 import { useState } from "react"
-import { ArrowRight, Users2, Target, Briefcase } from "lucide-react"
+import { ArrowRight, Users2, Target, Briefcase, CheckCircle2, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp"
 
 const actors = [
   {
@@ -63,7 +66,7 @@ export default function SignupActorStep() {
             <>
               <div className="mb-10 md:mb-14">
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-foreground/60">
-                  Step 1 of 3
+                  Step 1 of 4
                 </p>
                 <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
                   Who is this account for?
@@ -173,7 +176,7 @@ export default function SignupActorStep() {
             <div className="mx-auto max-w-2xl">
               <div className="mb-10 md:mb-14 text-center">
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-foreground/60">
-                  Step 2 of 3
+                  Step 2 of 4
                 </p>
                 <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
                   Create your account
@@ -184,7 +187,7 @@ export default function SignupActorStep() {
               </div>
 
               <div className="mb-10 h-2 w-full overflow-hidden rounded-full bg-border">
-                <div className="h-full w-2/3 rounded-full bg-accent" />
+                <div className="h-full w-1/2 rounded-full bg-accent" />
               </div>
 
               <div className="rounded-3xl border border-border bg-background p-6 md:p-10 shadow-sm">
@@ -227,12 +230,393 @@ export default function SignupActorStep() {
                     >
                       Back
                     </Button>
-                    <Button type="button" className="bg-accent hover:bg-accent/90 text-white rounded-full px-8">
-                      Continue to Step 3
+                    <Button type="button" onClick={() => setStep(3)} className="bg-accent hover:bg-accent/90 text-white rounded-full px-8">
+                      Verify Email
                       <ArrowRight className="ml-2 size-4" />
                     </Button>
                   </div>
                 </form>
+              </div>
+            </div>
+          )}
+
+          {/* Step 3: Email OTP Verification */}
+          {step === 3 && (
+            <div className="mx-auto max-w-md">
+              <div className="mb-10 md:mb-14 text-center">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-foreground/60">
+                  Step 3 of 4
+                </p>
+                <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+                  Verify your email
+                </h1>
+                <p className="mt-4 text-base text-foreground/70 md:text-lg">
+                  We've sent a 6-digit code to <span className="font-semibold text-foreground">your email</span>.
+                </p>
+              </div>
+
+              <div className="mb-10 h-2 w-full overflow-hidden rounded-full bg-border">
+                <div className="h-full w-3/4 rounded-full bg-accent" />
+              </div>
+
+              <div className="rounded-3xl border border-border bg-background p-6 md:p-10 shadow-sm">
+                <form className="space-y-6">
+                  <div className="space-y-4">
+                    <Label htmlFor="otp" className="text-center block">
+                      Enter verification code
+                    </Label>
+                    <div className="flex justify-center">
+                      <InputOTP maxLength={6} id="otp">
+                        <InputOTPGroup>
+                          <InputOTPSlot index={0} />
+                          <InputOTPSlot index={1} />
+                          <InputOTPSlot index={2} />
+                          <InputOTPSlot index={3} />
+                          <InputOTPSlot index={4} />
+                          <InputOTPSlot index={5} />
+                        </InputOTPGroup>
+                      </InputOTP>
+                    </div>
+                    <p className="text-center text-sm text-muted-foreground">
+                      Please enter the 6-digit code sent to your email.
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-border bg-muted/30 px-4 py-3 text-center">
+                    <p className="text-sm text-foreground/75">
+                      Didn't receive the code?{" "}
+                      <button
+                        type="button"
+                        className="font-semibold text-accent hover:text-accent/80 transition-colors"
+                      >
+                        Resend code
+                      </button>
+                    </p>
+                    <p className="mt-2 text-xs text-muted-foreground">
+                      Code expires in 10 minutes
+                    </p>
+                  </div>
+
+                  <div className="pt-4 flex items-center justify-between gap-4">
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      onClick={() => setStep(2)}
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      Back
+                    </Button>
+                    <Button type="button" onClick={() => setStep(4)} className="bg-accent hover:bg-accent/90 text-white rounded-full px-8">
+                      Verify & Continue
+                      <ArrowRight className="ml-2 size-4" />
+                    </Button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
+
+          {/* Step 4: Role-Specific Details */}
+          {step === 4 && (
+            <div className="mx-auto max-w-2xl">
+              <div className="mb-10 md:mb-14 text-center">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-foreground/60">
+                  Step 4 of 4
+                </p>
+                <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+                  Tell us about yourself
+                </h1>
+                <p className="mt-4 text-base text-foreground/70 md:text-lg">
+                  Help us personalize your experience as a <span className="font-semibold text-foreground">{selectedActor.name}</span>.
+                </p>
+              </div>
+
+              <div className="mb-10 h-2 w-full overflow-hidden rounded-full bg-border">
+                <div className="h-full w-full rounded-full bg-accent" />
+              </div>
+
+              <div className="rounded-3xl border border-border bg-background p-6 md:p-10 shadow-sm">
+                <form className="space-y-6">
+                  {/* Athlete Form */}
+                  {selectedId === "athlete" && (
+                    <>
+                      <div className="space-y-2">
+                        <Label htmlFor="sport">Primary Sport</Label>
+                        <Input id="sport" placeholder="e.g., Running, Swimming, Cycling" />
+                      </div>
+
+                      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                        <div className="space-y-2">
+                          <Label htmlFor="level">Experience Level</Label>
+                          <Select>
+                            <SelectTrigger id="level" className="w-full">
+                              <SelectValue placeholder="Select level" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="beginner">Beginner</SelectItem>
+                              <SelectItem value="intermediate">Intermediate</SelectItem>
+                              <SelectItem value="advanced">Advanced</SelectItem>
+                              <SelectItem value="elite">Elite/Professional</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="trainingFrequency">Training Frequency</Label>
+                          <Select>
+                            <SelectTrigger id="trainingFrequency" className="w-full">
+                              <SelectValue placeholder="Select frequency" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="1-2">1-2 times/week</SelectItem>
+                              <SelectItem value="3-4">3-4 times/week</SelectItem>
+                              <SelectItem value="5-6">5-6 times/week</SelectItem>
+                              <SelectItem value="daily">Daily</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="goals">Competition Goals</Label>
+                        <Textarea
+                          id="goals"
+                          placeholder="What are your performance or competition goals? (e.g., Complete a marathon, improve 5K time)"
+                          className="min-h-24"
+                        />
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="constraints">Schedule & Constraints</Label>
+                        <Textarea
+                          id="constraints"
+                          placeholder="Any time constraints, injuries, or preferences we should know about?"
+                          className="min-h-20"
+                        />
+                      </div>
+                    </>
+                  )}
+
+                  {/* Coach Form */}
+                  {selectedId === "coach" && (
+                    <>
+                      <div className="space-y-2">
+                        <Label htmlFor="specialties">Coaching Specialties</Label>
+                        <Input id="specialties" placeholder="e.g., Strength Training, Endurance, Youth Development" />
+                      </div>
+
+                      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                        <div className="space-y-2">
+                          <Label htmlFor="certifications">Certifications</Label>
+                          <Input id="certifications" placeholder="e.g., NASM, CSCS, USATF" />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="experience">Years of Experience</Label>
+                          <Select>
+                            <SelectTrigger id="experience" className="w-full">
+                              <SelectValue placeholder="Select experience" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="0-2">0-2 years</SelectItem>
+                              <SelectItem value="3-5">3-5 years</SelectItem>
+                              <SelectItem value="6-10">6-10 years</SelectItem>
+                              <SelectItem value="10+">10+ years</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                        <div className="space-y-2">
+                          <Label htmlFor="rosterSize">Typical Roster Size</Label>
+                          <Select>
+                            <SelectTrigger id="rosterSize" className="w-full">
+                              <SelectValue placeholder="Select size" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="1-5">1-5 athletes</SelectItem>
+                              <SelectItem value="6-15">6-15 athletes</SelectItem>
+                              <SelectItem value="16-30">16-30 athletes</SelectItem>
+                              <SelectItem value="30+">30+ athletes</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="coachingFormat">Coaching Format</Label>
+                          <Select>
+                            <SelectTrigger id="coachingFormat" className="w-full">
+                              <SelectValue placeholder="Select format" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="in-person">In-Person</SelectItem>
+                              <SelectItem value="online">Online</SelectItem>
+                              <SelectItem value="hybrid">Hybrid</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="offerings">Services & Offerings</Label>
+                        <Textarea
+                          id="offerings"
+                          placeholder="Describe your coaching services and programs (e.g., 1-on-1 training, group sessions, nutrition planning)"
+                          className="min-h-24"
+                        />
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="communication">Communication Preferences</Label>
+                        <Textarea
+                          id="communication"
+                          placeholder="How do you prefer to communicate with athletes? (e.g., weekly check-ins, training app, video calls)"
+                          className="min-h-20"
+                        />
+                      </div>
+                    </>
+                  )}
+
+                  {/* Consultant Form */}
+                  {selectedId === "consultant" && (
+                    <>
+                      <div className="space-y-2">
+                        <Label htmlFor="focus">Primary Consulting Focus</Label>
+                        <Input id="focus" placeholder="e.g., Sports Performance, Nutrition, Mental Coaching" />
+                      </div>
+
+                      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                        <div className="space-y-2">
+                          <Label htmlFor="clientType">Typical Client Type</Label>
+                          <Select>
+                            <SelectTrigger id="clientType" className="w-full">
+                              <SelectValue placeholder="Select type" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="individual">Individual Athletes</SelectItem>
+                              <SelectItem value="teams">Teams</SelectItem>
+                              <SelectItem value="organizations">Organizations</SelectItem>
+                              <SelectItem value="mixed">Mixed</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="engagementLength">Typical Engagement Length</Label>
+                          <Select>
+                            <SelectTrigger id="engagementLength" className="w-full">
+                              <SelectValue placeholder="Select length" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="short">Short-term (1-3 months)</SelectItem>
+                              <SelectItem value="medium">Medium-term (3-6 months)</SelectItem>
+                              <SelectItem value="long">Long-term (6+ months)</SelectItem>
+                              <SelectItem value="ongoing">Ongoing</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="services">Services & Deliverables</Label>
+                        <Textarea
+                          id="services"
+                          placeholder="What services do you provide? (e.g., program design, performance analysis, workshops)"
+                          className="min-h-24"
+                        />
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="stakeholders">Key Stakeholders</Label>
+                        <Textarea
+                          id="stakeholders"
+                          placeholder="Who are your typical stakeholders? (e.g., athletes, coaches, management, sponsors)"
+                          className="min-h-20"
+                        />
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="reporting">Reporting & Communication Needs</Label>
+                        <Textarea
+                          id="reporting"
+                          placeholder="How do you typically report progress and communicate with stakeholders?"
+                          className="min-h-20"
+                        />
+                      </div>
+                    </>
+                  )}
+
+                  <div className="pt-4 flex items-center justify-between gap-4">
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      onClick={() => setStep(3)}
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      Back
+                    </Button>
+                    <Button type="button" onClick={() => setStep(5)} className="bg-accent hover:bg-accent/90 text-white rounded-full px-8">
+                      Create Account
+                      <ArrowRight className="ml-2 size-4" />
+                    </Button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
+
+          {/* Step 5: Success / Finalization */}
+          {step === 5 && (
+            <div className="mx-auto max-w-xl">
+              <div className="text-center">
+                {/* Success Icon */}
+                <div className="mb-8 flex justify-center">
+                  <div className="flex size-20 items-center justify-center rounded-full bg-accent/10">
+                    <CheckCircle2 className="size-10 text-accent" />
+                  </div>
+                </div>
+
+                {/* Success Message */}
+                <div className="mb-10">
+                  <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                    Your account is created
+                  </h1>
+                  <p className="mt-4 text-base text-foreground/70">
+                    Welcome to AthletyQ! You're all set to get started.
+                  </p>
+                </div>
+
+                {/* Account Info */}
+                <div className="mb-8 space-y-3">
+                  <div className="flex items-center justify-between rounded-xl border border-border bg-background px-5 py-4">
+                    <span className="text-sm text-foreground/70">Account Type</span>
+                    <span className="font-medium text-foreground">{selectedActor.name}</span>
+                  </div>
+
+                  <div className="flex items-center justify-between rounded-xl border border-border bg-background px-5 py-4">
+                    <span className="text-sm text-foreground/70">Status</span>
+                    <span className="flex items-center gap-2 font-medium text-green-600 dark:text-green-400">
+                      Active
+                    </span>
+                  </div>
+                </div>
+
+                {/* CTA Button */}
+                <div className="flex flex-col gap-3">
+                  <Button
+                    className="w-full bg-accent hover:bg-accent/90 text-white rounded-xl px-6 py-6 text-base font-medium"
+                  >
+                    Go to Dashboard
+                    <ArrowRight className="ml-2 size-5" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    className="w-full rounded-xl px-6 py-3 text-base"
+                  >
+                    Complete Profile Later
+                  </Button>
+                </div>
               </div>
             </div>
           )}
