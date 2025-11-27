@@ -18,7 +18,7 @@ export default function Navigation() {
               <span className="text-white font-bold text-sm">AC</span>
             </div>
             <a href='#home' className="font-bold text-lg transition-colors text-foreground">
-              AthliyQ
+              AthletyQ
             </a>
           </div>
 
