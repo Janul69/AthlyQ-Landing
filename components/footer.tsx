@@ -11,7 +11,7 @@ export default function Footer() {
               <div className="w-8 h-8 bg-gradient-to-br from-accent to-accent/60 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">AC</span>
               </div>
-              <span className="font-bold text-lg text-foreground">AthlyQ</span>
+              <span className="font-bold text-lg text-foreground">AthletyQ</span>
             </div>
             <p className="text-sm text-foreground/60">
               Connecting athletes with elite coaches for personalized training and performance improvement.
@@ -85,7 +85,7 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-foreground/60">© 2025 AthleteCoach. All rights reserved.</p>
+          <p className="text-sm text-foreground/60">© 2025 AthletyQ. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="#" className="text-foreground/60 hover:text-accent transition">
               <Twitter size={20} />
