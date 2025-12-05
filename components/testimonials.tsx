@@ -3,7 +3,7 @@ import { Star } from "lucide-react"
 export default function Testimonials() {
   const testimonials = [
     {
-      text: "AthleteCoach completely transformed my training regimen. Within 6 weeks, my sprint time improved by 12%. The personalized feedback from my coach is invaluable.",
+      text: "AthletyQ completely transformed my training regimen. Within 6 weeks, my sprint time improved by 12%. The personalized feedback from my coach is invaluable.",
       author: "Alex Rodriguez",
       role: "Track Athlete",
       avatar: "/male-athlete-avatar.jpg",
@@ -30,7 +30,7 @@ export default function Testimonials() {
             What Athletes <span className="text-accent">Are Saying</span>
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Real stories from real athletes achieving their goals with AthleteCoach.
+            Real stories from real athletes achieving their goals with AthletyQ.
           </p>
         </div>
 
