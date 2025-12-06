@@ -6,6 +6,7 @@ import FeaturedCoaches from "@/components/featured-coaches"
 import Testimonials from "@/components/testimonials"
 import Pricing from "@/components/pricing"
 import CTA from "@/components/cta"
+import AboutUs from "@/components/about-us"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Testimonials />
       <Pricing />
       <CTA />
+      <AboutUs />
       <Contact />
       <Footer />
     </main>
