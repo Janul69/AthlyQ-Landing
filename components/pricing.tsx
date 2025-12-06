@@ -55,12 +55,6 @@ export default function Pricing() {
                 </div>
                 <p className="text-foreground/80 leading-tight">Message coaches directly</p>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="mt-1 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Check size={16} className="text-accent" />
-                </div>
-                <p className="text-foreground/80 leading-tight">Community forum access</p>
-              </div>
             </div>
 
             <button className="w-full rounded-full py-3 text-base font-semibold transition-all duration-200 bg-accent text-white hover:bg-accent/90">

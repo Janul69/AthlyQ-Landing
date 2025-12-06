@@ -25,7 +25,7 @@ export default function CTA() {
                 Get Started Free
                 <ArrowRight size={18} />
               </Button>
-              <Button variant="outline" className="rounded-full px-8 h-12 text-base font-semibold bg-transparent">
+              <Button variant="outline" className="rounded-full px-8 h-12 text-base font-semibold bg-transparent hover:bg-white/90 hover:text-black">
                 Schedule a Demo
               </Button>
             </div>
