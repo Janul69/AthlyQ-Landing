@@ -1,65 +1,56 @@
 import { Linkedin, Twitter, Mail } from "lucide-react"
+import Image from "next/image"
 
 const teamMembers = [
     {
         id: 1,
-        name: "Sarah Mitchell",
+        name: "Abisheka Dawlagala",
         role: "CEO & Founder",
         bio: "Former Olympic athlete with 15+ years of coaching experience. Passionate about connecting athletes with the right mentors.",
-        image: "/team/sarah.jpg",
+        image: "/team/WhatsApp Image 2025-11-27 at 10.47.11 PM.jpeg",
         linkedin: "#",
         twitter: "#",
         email: "sarah@athliyq.com"
     },
     {
         id: 2,
-        name: "David Park",
+        name: "Janul Dissanayake",
         role: "CTO",
         bio: "Tech innovator building scalable platforms for the sports industry. Previously at Google and Strava.",
-        image: "/team/david.jpg",
+        image: "/team/Gemini_Generated_Image_l126w1l126w1l126.png",
         linkedin: "#",
         twitter: "#",
         email: "david@athliyq.com"
     },
     {
         id: 3,
-        name: "Emily Chen",
+        name: "Dhilakshan Kanagendran",
         role: "Head of Product",
         bio: "Product designer focused on creating intuitive experiences for athletes and coaches worldwide.",
-        image: "/team/emily.jpg",
+        image: "/team/WhatsApp Image 2025-12-17 at 9.55.12 PM.jpeg",
         linkedin: "#",
         twitter: "#",
         email: "emily@athliyq.com"
     },
     {
         id: 4,
-        name: "Marcus Johnson",
+        name: "Nivesh Harendra",
         role: "Head of Coaching",
         bio: "Certified sports psychologist and performance coach working with elite athletes for over a decade.",
-        image: "/team/marcus.jpg",
+        image: "/team/Image (7).jfif",
         linkedin: "#",
         twitter: "#",
         email: "marcus@athliyq.com"
     },
     {
         id: 5,
-        name: "Jessica Taylor",
+        name: "Sithara Wickramanayake",
         role: "Head of Marketing",
         bio: "Marketing strategist with a passion for sports. Building brand awareness and athlete community engagement.",
-        image: "/team/jessica.jpg",
+        image: "/team/WhatsApp Image 2025-12-17 at 10.02.00 PM.jpeg",
         linkedin: "#",
         twitter: "#",
         email: "jessica@athliyq.com"
-    },
-    {
-        id: 6,
-        name: "Ryan Martinez",
-        role: "Community Manager",
-        bio: "Former collegiate athlete dedicated to fostering connections between coaches and athletes worldwide.",
-        image: "/team/ryan.jpg",
-        linkedin: "#",
-        twitter: "#",
-        email: "ryan@athliyq.com"
     },
 ]
 
@@ -83,23 +74,78 @@ export default function AboutUs() {
                     </p>
                 </div>
 
-                {/* Team Grid - 4 columns on desktop with last 2 centered */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                    {teamMembers.map((member, index) => (
+                {/* Team Grid - 3 columns on desktop with last 2 centered */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 max-w-5xl mx-auto">
+                    {teamMembers.slice(0, 3).map((member) => (
                         <div
                             key={member.id}
-                            className={`bg-white rounded-xl border border-border p-5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${index === 4 ? 'lg:col-start-2' : ''
-                                }`}
+                            className="bg-white rounded-xl border border-border p-4 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                         >
-                            {/* Team Member Photo - Smaller */}
+                            {/* Team Member Photo */}
                             <div className="mb-4">
-                                <div className="aspect-square rounded-lg overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center">
-                                    {/* Placeholder - will show actual image when provided */}
-                                    <div className="w-24 h-24 rounded-full bg-accent/10 flex items-center justify-center">
-                                        <span className="text-3xl font-bold text-accent">
-                                            {member.name.split(' ').map(n => n[0]).join('')}
-                                        </span>
-                                    </div>
+                                <div className="aspect-square rounded-lg overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5">
+                                    <Image
+                                        src={member.image}
+                                        alt={member.name}
+                                        width={400}
+                                        height={400}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Team Member Info - Smaller fonts */}
+                            <div className="text-center mb-4">
+                                <h3 className="text-lg font-bold text-foreground mb-1">{member.name}</h3>
+                                <p className="text-sm font-semibold text-accent mb-2">{member.role}</p>
+                                <p className="text-xs text-foreground/70 leading-relaxed line-clamp-3">{member.bio}</p>
+                            </div>
+
+                            {/* Social Links - Smaller */}
+                            <div className="flex items-center justify-center gap-2 pt-3 border-t border-border">
+                                <a
+                                    href={member.linkedin}
+                                    className="p-1.5 rounded-lg hover:bg-accent/10 transition-colors group"
+                                    aria-label="LinkedIn"
+                                >
+                                    <Linkedin className="size-4 text-foreground/60 group-hover:text-accent transition-colors" />
+                                </a>
+                                <a
+                                    href={member.twitter}
+                                    className="p-1.5 rounded-lg hover:bg-accent/10 transition-colors group"
+                                    aria-label="Twitter"
+                                >
+                                    <Twitter className="size-4 text-foreground/60 group-hover:text-accent transition-colors" />
+                                </a>
+                                <a
+                                    href={`mailto:${member.email}`}
+                                    className="p-1.5 rounded-lg hover:bg-accent/10 transition-colors group"
+                                    aria-label="Email"
+                                >
+                                    <Mail className="size-4 text-foreground/60 group-hover:text-accent transition-colors" />
+                                </a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Second row with 2 centered cards */}
+                <div className="flex flex-wrap justify-center gap-6 mb-16 max-w-5xl mx-auto">
+                    {teamMembers.slice(3, 5).map((member) => (
+                        <div
+                            key={member.id}
+                            className="bg-white rounded-xl border border-border p-4 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
+                        >
+                            {/* Team Member Photo */}
+                            <div className="mb-4">
+                                <div className="aspect-square rounded-lg overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5">
+                                    <Image
+                                        src={member.image}
+                                        alt={member.name}
+                                        width={400}
+                                        height={400}
+                                        className="w-full h-full object-cover"
+                                    />
                                 </div>
                             </div>
 
