@@ -8,7 +8,7 @@ const teamMembers = [
         role: "CEO & Founder",
         bio: "Former Olympic athlete with 15+ years of coaching experience. Passionate about connecting athletes with the right mentors.",
         image: "/team/WhatsApp Image 2025-11-27 at 10.47.11 PM.jpeg",
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/abisheka-dawlagala-266a37269/",
         twitter: "#",
         email: "sarah@athliyq.com"
     },
@@ -18,7 +18,7 @@ const teamMembers = [
         role: "CTO",
         bio: "Tech innovator building scalable platforms for the sports industry. Previously at Google and Strava.",
         image: "/team/Gemini_Generated_Image_l126w1l126w1l126.png",
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/public-profile/settings",
         twitter: "#",
         email: "david@athliyq.com"
     },
@@ -28,7 +28,7 @@ const teamMembers = [
         role: "Head of Product",
         bio: "Product designer focused on creating intuitive experiences for athletes and coaches worldwide.",
         image: "/team/WhatsApp Image 2025-12-17 at 9.55.12 PM.jpeg",
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/dhilakshan-kanagendran-29658a256/",
         twitter: "#",
         email: "emily@athliyq.com"
     },
@@ -38,7 +38,7 @@ const teamMembers = [
         role: "Head of Coaching",
         bio: "Certified sports psychologist and performance coach working with elite athletes for over a decade.",
         image: "/team/Image (7).jfif",
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/niveshharendra?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         twitter: "#",
         email: "marcus@athliyq.com"
     },
@@ -48,7 +48,7 @@ const teamMembers = [
         role: "Head of Marketing",
         bio: "Marketing strategist with a passion for sports. Building brand awareness and athlete community engagement.",
         image: "/team/WhatsApp Image 2025-12-17 at 10.02.00 PM.jpeg",
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/sithara-wickramanayake-52a61828b/",
         twitter: "#",
         email: "jessica@athliyq.com"
     },
@@ -97,8 +97,6 @@ export default function AboutUs() {
                             {/* Team Member Info - Smaller fonts */}
                             <div className="text-center mb-4">
                                 <h3 className="text-lg font-bold text-foreground mb-1">{member.name}</h3>
-                                <p className="text-sm font-semibold text-accent mb-2">{member.role}</p>
-                                <p className="text-xs text-foreground/70 leading-relaxed line-clamp-3">{member.bio}</p>
                             </div>
 
                             {/* Social Links - Smaller */}
@@ -152,8 +150,6 @@ export default function AboutUs() {
                             {/* Team Member Info - Smaller fonts */}
                             <div className="text-center mb-4">
                                 <h3 className="text-lg font-bold text-foreground mb-1">{member.name}</h3>
-                                <p className="text-xs font-semibold text-accent mb-2">{member.role}</p>
-                                <p className="text-xs text-foreground/70 leading-relaxed line-clamp-3">{member.bio}</p>
                             </div>
 
                             {/* Social Links - Smaller */}
