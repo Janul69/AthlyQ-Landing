@@ -113,10 +113,10 @@ export default function Contact() {
                                 We're here to help and answer any questions
                             </p>
                             <a
-                                href="mailto:contact@athliyq.com"
+                                href="mailto:contact@athletyq.com"
                                 className="text-accent hover:underline font-medium"
                             >
-                                contact@athliyq.com
+                                contact@athletyq.com
                             </a>
                         </div>
                     </div>
