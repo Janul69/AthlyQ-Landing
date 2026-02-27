@@ -127,10 +127,11 @@ export default function Navigation() {
 
           <div className="hidden md:flex items-center gap-3">
             <Button
+              asChild
               variant="outline"
               className="rounded-full transition-all duration-300 bg-transparent border-border text-foreground hover:bg-muted hover:text-black hover:border-foreground/20"
             >
-              Sign In
+              <a href="https://dev.athletyq.com/login">Sign In</a>
             </Button>
             <Button className="rounded-full bg-accent hover:bg-accent/90 text-white font-semibold px-6">
               Get Started
@@ -204,10 +205,11 @@ export default function Navigation() {
             </a>
             <div className="flex gap-2 pt-2">
               <Button
+                asChild
                 variant="outline"
                 className="flex-1 rounded-full text-sm transition-all duration-300 bg-transparent border-border text-foreground hover:bg-muted hover:border-foreground/20"
               >
-                Sign In
+                <a href="https://dev.athletyq.com/login">Sign In</a>
               </Button>
               <Button className="flex-1 rounded-full text-sm bg-accent hover:bg-accent/90 text-white font-semibold">
                 Get Started
