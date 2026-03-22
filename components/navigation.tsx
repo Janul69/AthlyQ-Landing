@@ -131,7 +131,7 @@ export default function Navigation() {
               variant="outline"
               className="rounded-full transition-all duration-300 bg-transparent border-border text-foreground hover:bg-muted hover:text-black hover:border-foreground/20"
             >
-              <a href="https://dev.athletyq.com/login">Sign In</a>
+              <a href="https://app.athletyq.com/login">Sign In</a>
             </Button>
             <Button className="rounded-full bg-accent hover:bg-accent/90 text-white font-semibold px-6">
               Get Started
@@ -209,7 +209,7 @@ export default function Navigation() {
                 variant="outline"
                 className="flex-1 rounded-full text-sm transition-all duration-300 bg-transparent border-border text-foreground hover:bg-muted hover:border-foreground/20"
               >
-                <a href="https://dev.athletyq.com/login">Sign In</a>
+                <a href="https://app.athletyq.com/login">Sign In</a>
               </Button>
               <Button className="flex-1 rounded-full text-sm bg-accent hover:bg-accent/90 text-white font-semibold">
                 Get Started
